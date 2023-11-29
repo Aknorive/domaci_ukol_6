@@ -1,4 +1,4 @@
-function fillcut(str = String, len = Number) {
+function fillcut(str, len) {
   let finalString = '';
 
   if (str.length > len) finalString = str.slice(0, len);
