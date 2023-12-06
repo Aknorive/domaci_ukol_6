@@ -1,20 +1,17 @@
 function fillcut(str, len) {
   let finalString = '';
 
-  if (str.length > len) finalString = str.slice(0, len);
-  else if (str.length < len) {
-    const missingLeght = len - str.length;
-    finalString = addDots(missingLeght) + str;
-  } 
-  else finalString = str;
+  if (str.length > len) 
+  {
+    finalString = str.slice(0, len)
+  }
+  else if (str.length < len) 
+  {
+    finalString = str.padStart(len, '.')
+  }
+  else {finalString = str}
 
   return finalString;
-}
-
-function addDots(dotsQuantity){
-  let dots = '';
-  for (let i = 0; i < dotsQuantity; i++) dots = dots + '.';
-  return dots;
 }
 
 document.body.innerHTML += fillcut('petr', 8) + '<br>'; // vypíše „....petr“
